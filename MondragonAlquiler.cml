@@ -1,0 +1,76 @@
+/* Example Context Map written with 'ContextMapper DSL' */
+ContextMap InsuranceContextMap {
+	type = SYSTEM_LANDSCAPE
+	state = TO_BE
+	
+	/* Add bounded contexts to this context map: */
+	contains AlquilerDeVehiculoContext
+	contains ServicoCLienteContext
+	contains GestionVehiculosContext
+	contains GestiondePagosContext
+	contains SeguridadContext
+
+	AlquilerDeVehiculoContext -> ServicoCLienteContext
+	GestiondePagosContext <-> SeguridadContext
+	AlquilerDeVehiculoContext <- GestionVehiculosContext
+	AlquilerDeVehiculoContext <- ServicoCLienteContext
+	ServicoCLienteContext <- SeguridadContext
+	AlquilerDeVehiculoContext <- GestiondePagosContext
+
+}
+
+BoundedContext AlquilerDeVehiculoContext implements AlquilerDeVehiculosDomain, ReservaDeVehiculoDomain, DetallesDeslVehiculo, GeradorDeContratos
+BoundedContext ServicoCLienteContext implements GestiondeCreacionDeUsuaio, GestionDeInformacionDelCliente
+BoundedContext GestionVehiculosContext implements  EstadoFisicoDelVehiculo, GestionDeInformaciondeServicioVehiculo
+BoundedContext GestiondePagosContext implements GestiondeComprobante , GestionSeguridadDePago
+BoundedContext SeguridadContext implements GestionDeSeguridadDatosCliente , GestionSeguridadDePago, GestionDeIdentidad
+Domain InsuranceDomain {
+	Subdomain AlquilerDeVehiculosDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Es el rubro principal del negocio"
+	}
+	Subdomain ReservaDeVehiculoDomain {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain EstadoFisicoDelVehiculo {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain GeradorDeContratos {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain GestionDeInformacionDelCliente {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain GestionDeInformaciondeServicioVehiculo {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain DetallesDeslVehiculo {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+	}
+	Subdomain  GestionDeIdentidad{
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+	}Subdomain  GestiondeCreacionDeUsuaio{
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+	}
+	Subdomain  GestiondeComprobante{
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+	}
+	Subdomain  GestionSeguridadDePago{
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+	}
+	Subdomain  GestionDeSeguridadDatosCliente{
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+	}
+
+}
