@@ -31,38 +31,38 @@ Domain InsuranceDomain {
 	}
 	Subdomain ReservaDeVehiculoDomain {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain EstadoFisicoDelVehiculo {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain GeradorDeContratos {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain GestionDeInformacionDelCliente {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain GestionDeInformaciondeServicioVehiculo {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain DetallesDeslVehiculo {
 		type = SUPPORTING_DOMAIN
-		domainVisionStatement = "Service (external system) to solve printing for all kinds of documents (debts, policies, etc.)"
+		
 	}
 	Subdomain  GestionDeIdentidad{
 		type = GENERIC_SUBDOMAIN
-		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+		
 	}Subdomain  GestiondeCreacionDeUsuaio{
 		type = GENERIC_SUBDOMAIN
-		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+		
 	}
 	Subdomain  GestiondeComprobante{
 		type = GENERIC_SUBDOMAIN
-		domainVisionStatement = "Subdomain supporting everything which relates to risk management."
+		
 	}
 	Subdomain  GestionSeguridadDePago{
 		type = GENERIC_SUBDOMAIN
