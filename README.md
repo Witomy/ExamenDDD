@@ -1,1 +1,1 @@
-# ExamenDDD
+Se crearon los subdominios necesarios para detallar 
